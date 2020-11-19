@@ -1,0 +1,50 @@
+<template>
+    <lightning-card title="For:Each Demo" icon-name="standard:contact">
+        <table class="slds-table slds-table_cell-buffer slds-table_bordered">
+            <thead>
+                <tr class="slds-line-height_reset">
+                    <th class="" scope="col">
+                        <div class="slds-truncate" title="Index">Index</div>
+                    </th>
+                    <th class="" scope="col">
+                        <div class="slds-truncate" title="Id">Id</div>
+                    </th>
+                    <th class="" scope="col">
+                        <div class="slds-truncate" title="Name">Name</div>
+                    </th>
+                    <th class="" scope="col">
+                        <div class="slds-truncate" title="Email">Email</div>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <template if:true={contacts.length} for:each={contacts} for:item='con' for:index='index'>
+                    <tr class="slds-hint-parent" key={con.Id}>
+                        <td data-label="Index">
+                            <div class="slds-truncate">{con.index}</div>
+                        </td>
+                        <td data-label="Id">
+                            <div class="slds-truncate">{con.Id}</div>
+                        </td>
+                        <td data-label="Name">
+                            <div class="slds-truncate">{con.Name}</div>
+                        </td>
+                        <td data-label="Email">
+                            <div class="slds-truncate">{con.Email}</div>
+                        </td>
+                    </tr>
+                </template>
+            </tbody>
+        </table>
+    </lightning-card>
+
+    <lightning-card title="Iterator Demo" icon-name="standard:contact">
+        <div class="slds-card__body slds-card__body_inner">
+            <div class="slds-border_top"></div>
+                <template if:true={contacts.length} for:each={contacts} for:item='con' for:index='index'>
+                    <div class="slds-p-vertical_xx-small" key={con.Id}>{con.Name} - {con.Email}</div>
+                </template>
+            <div class="slds-border_top"></div>
+        </div>
+    </lightning-card>
+</template>

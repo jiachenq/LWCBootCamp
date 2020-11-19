@@ -1,0 +1,26 @@
+<template>
+    <template if:true={Tom}>
+        <lightning-card>
+            <h3 slot="title">
+                <lightning-icon icon-name="utility:connected_apps" size="small"></lightning-icon>
+                Hello, this is Tom!
+            </h3>
+            <div class="slds-align_absolute-center">
+                <img src={ImageTom}>
+                <lightning-button variant="brand" label="Show Jerry" title="Show Jerry Image" onclick={handleClick} class="slds-m-left_x-small"></lightning-button>
+            </div>
+        </lightning-card>
+    </template>
+    <template if:false={Tom}>
+        <lightning-card>
+            <h3 slot="title">
+                <lightning-icon icon-name="utility:connected_apps" size="small"></lightning-icon>
+                Hello, this is Jerry!
+            </h3>
+            <div class="slds-align_absolute-center">
+                <img src={ImageJerry} width="140" height="140">
+                <lightning-button variant="brand" label="Show Tom" title="Show Tom Image" onclick={handleClick} class="slds-m-left_x-small"></lightning-button>
+            </div>
+        </lightning-card>
+    </template>
+</template>
