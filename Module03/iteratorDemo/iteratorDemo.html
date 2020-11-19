@@ -41,7 +41,7 @@
     <lightning-card title="Iterator Demo" icon-name="standard:contact">
         <div class="slds-card__body slds-card__body_inner">
             <div class="slds-border_top"></div>
-                <template iterator:con:{contacts}>
+                <template iterator:con={contacts}>
                     <div class="slds-p-vertical_xx-small" key={con.value.Id}>{con.value.Name} - {con.value.Email}</div>
                 </template>
             <div class="slds-border_top"></div>
