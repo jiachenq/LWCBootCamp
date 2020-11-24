@@ -1,0 +1,52 @@
+<template>
+    <div class="slds-grid">
+        <div class="slds-col">
+            <span>
+                <div class="slds-box">
+                    <lightning-card title="Child One" icon-name="standard:avatar">
+                        <div class="slds-align_absolute-center">
+                            <template if:true={selected1}>
+                                <lightning-button variant="destructive" label="Deselect" name="button1" onclick={handleClick} class="slds-m-left_x-small"></lightning-button>
+                            </template>
+                            <template if:false={selected1}>
+                                <lightning-button variant="success" label="Select" name="button1" onclick={handleClick} class="slds-m-left_x-small"></lightning-button>
+                            </template>
+                        </div>
+                    </lightning-card>
+                </div>
+            </span>
+        </div>
+        <div class="slds-col">
+            <span>
+                <div class="slds-box">
+                    <lightning-card title="Child Two" icon-name="standard:avatar">
+                        <div class="slds-align_absolute-center">
+                            <template if:true={selected2}>
+                                <lightning-button variant="destructive" label="Deselect" name="button2" onclick={handleClick} class="slds-m-left_x-small"></lightning-button>
+                            </template>
+                            <template if:false={selected2}>
+                                <lightning-button variant="success" label="Select" name="button2" onclick={handleClick} class="slds-m-left_x-small"></lightning-button>
+                            </template>
+                        </div>                
+                    </lightning-card>
+                </div>
+            </span>
+        </div>
+        <div class="slds-col">
+            <span>
+                <div class="slds-box">
+                    <lightning-card title="Child Three" icon-name="standard:avatar">
+                        <div class="slds-align_absolute-center">
+                            <template if:true={selected3}>
+                                <lightning-button variant="destructive" label="Deselect" name="button3" onclick={handleClick} class="slds-m-left_x-small"></lightning-button>
+                            </template>
+                            <template if:false={selected3}>
+                                <lightning-button variant="success" label="Select" name="button3" onclick={handleClick} class="slds-m-left_x-small"></lightning-button>
+                            </template>
+                        </div>
+                    </lightning-card>
+                </div>
+            </span>
+        </div>
+    </div>
+</template>

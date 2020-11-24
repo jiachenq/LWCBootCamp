@@ -1,0 +1,25 @@
+<template>
+    <lightning-card title="Parent" icon-name="standard:customers">
+        <div class="slds-grid">
+            <div class="slds-col">
+                <span>
+                    Child One: {status1}
+                </span>
+            </div>
+            <div class="slds-col">
+                <span>
+                    Child Two: {status2}
+                </span>
+            </div>
+            <div class="slds-col">
+                <span>
+                    Child Three: {status3}
+                </span>
+            </div>
+        </div>
+        <div>
+            <c-child status1={status1} status2={status2} status3={status3} selected1={selected1} oncustomclick={handleChildClick}>
+            </c-child>
+        </div>
+    </lightning-card>
+</template>
