@@ -1,4 +1,4 @@
-import { LightningElement, wire } from 'lwc';
+import { LightningElement, wire, track } from 'lwc';
 //import LMS method and Message Channel
 import { APPLICATION_SCOPE, subscribe, unsubscribe, MessageContext } from 'lightning/messageService';
 import SAMPLEMC from '@salesforce/messageChannel/SampleMessageChannel__c';
@@ -6,7 +6,7 @@ import SAMPLEMC from '@salesforce/messageChannel/SampleMessageChannel__c';
 export default class QuickCreateContactSubscriber extends LightningElement {
     subscription = null;
     receivedMessage = '';
-    arrayMessage = [];
+    @track arrayMessage = [];
 
     //Create MessageContext Object using @wire
     @wire(MessageContext) messageContext;
@@ -39,12 +39,12 @@ export default class QuickCreateContactSubscriber extends LightningElement {
             this.receivedMessage = message.lmsData.firstName + ' ' + message.lmsData.lastName;
             this.arrayMessage.push(this.receivedMessage);
             console.log(this.arrayMessage);
-            this.receivedMessage = '';
         }
     }
 
     ResetAll(){
         this.arrayMessage = [];
+        this.receivedMessage = '';
     }
 
 }

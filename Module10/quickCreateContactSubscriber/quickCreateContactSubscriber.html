@@ -16,11 +16,11 @@
             </div>
         </div>
         
-        <p>Message Received: JC</p>
+        <p>Message Received: {receivedMessage}</p>
         <p>Contacts added: </p>
-        {receivedMessage}
+        
         <template for:each={arrayMessage} for:item="message" for:index="index">
-            <div key={message.index}>
+            <div key={message.id}>
                 <br>{message}
             </div>
         </template>
